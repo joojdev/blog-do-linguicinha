@@ -1,0 +1,121 @@
+:root {
+  --container-width: 500px;
+  --container-height: 80%;
+  --header-height: 60px;
+  --footer-height: 30px;
+}
+
+* {
+  padding: 0;
+  margin: 0;
+  font-family: 'Comic Sans', sans-serif;
+}
+
+html, body {
+  height: 100%;
+}
+
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-image: url('../images/dancing-cat.gif');
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-attachment: fixed;
+  background-size: 200% 100%;
+}
+
+#container {
+  width: var(--container-width);
+  height: var(--container-height);
+  border-radius: 10px;
+  overflow: auto;
+  opacity: 0.7;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+}
+
+#container:hover {
+  opacity: 1;
+  transition: .2s;
+}
+
+header {
+  background: #ff5555;
+  height: var(--header-height);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 20px;
+}
+
+#sidebarOpen {
+  height: calc(100% - 20px);
+  cursor: pointer;
+  padding: 5px;
+  border-radius: 10px;
+}
+
+#sidebarOpen:hover {
+  transition: .2s;
+  background: #ff8888;
+}
+
+aside {
+  background: #5555ff;
+  float: left;
+  width: calc(var(--container-width) * 0.3);
+  height: calc(100% - var(--header-height) - var(--footer-height));
+  padding: 10px;
+  box-sizing: border-box;
+  overflow-y: auto;
+}
+
+aside > ul {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  list-style: none;
+}
+
+aside > ul > li {
+  background: #6666ff;
+  padding: 10px;
+  border-radius: 10px;
+  color: white;
+  cursor: pointer;
+  word-wrap: break-word;
+}
+
+aside > ul > li:hover {
+  transition: .2s;
+  background: #8888ff;
+}
+
+article {
+  float: left;
+  width: calc(var(--container-width) * 0.7);
+  background: #ffff55;
+  height: calc(100% - var(--header-height) - var(--footer-height));
+  padding: 15px;
+  box-sizing: border-box;
+  overflow-y: auto;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+article > p {
+  text-align: justify;
+  text-justify: inter-word;
+}
+
+footer {
+  clear: both;
+  height: var(--footer-height);
+  background: #55ff55;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  padding-right: 10px;
+}
